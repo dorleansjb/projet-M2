@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Meteo JB</title>
+    <style>
+        body{
+            background-image: url(meteo.jpg);
+           background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #text{
+            background-color: antiquewhite;
+            opacity: 0.6;
+
+        }
+    .temperatureClasse{
+        font-size:4.8em;
+        color:red;
+    }
+    .temperatureClasse:after{
+        content: " °";
+    }
+    .vitesseVentClasse{
+         font-size:4.8em;
+        color:green;
+    }
+    .vitesseVentClasse:after{
+        content: " km/h";
+    }
+    .arrow{
+        transition: ease 1s;
+    }
+    </style>
+</head>
+<body>
+    
+<h1 class="d-flex justify-content-center  text-light my-5"><i>Tableau de bord météo</i></h1>
+
+<div class="container  my-5">
+    <div class="d-flex  m-5  justify-content-center">
+
+        <div class="col-4">
+         <button class="btn btn-success " name="listeVille" id="listeVille">Récupérer la liste des villes</button>
+        </div>
+
+        <div class="input-group col-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Villes</span>
+            </div>
+            <select class="custom-select" id="listeDeroulante">
+               
+            </select>
+        </div>
+
+    </div>
+
+    <div class="container my-5 border rounded bg-dark text-light p-2" id="tableau">
+
+        <div class="d-flex justify-content-center">
+            <div class="col-4">
+                <h1 class="text-center">Température</h1>
+                <H1 class="display-3 text-center temperatureClasse" id="temperature"></H1>
+            </div>  
+
+            <div class="col-4">
+                <h1 class="text-center">Vitesse du vent</h1>
+                <H1 class="display-3 text-center vitesseVentClasse" id="vitesseVent"></H1>
+            </div>  
+
+            <div class="col-4">
+                <h1 class="text-center">Direction du vent</h1>
+                <div class="d-flex justify-content-center ">
+                     <img src="right-arrow.png" alt="" id="fleche" class="img-fluid arrow w-50 h-50">
+                </div>
+            </div>  
+        </div>
+    </div>
+
+<div class="container">
+    <div class="row">
+        <div id="text" class="col-8 my-5 border text-dark p-5 ">
+            <p><h4>Introduction</h4>
+            Une API (Application Programming Interface) est une interface par laquelle un logiciel offre des services à un autre
+            logiciel.
+            On peut accéder à ces services de deux manières :
+            en installant une bibliothèque comme jQuery qui facilite les manipulations DOM
+            en se connectant à un Web service comme OpenWeatherMap qui délivre plus d’un milliard de prévisions météo par jour
+            Les APIs sont en principe accompagnées d’une documentation qui spécifie comment se servir des différentes
+            fonctionnalités.<hr>
+
+           <h4> Web service et API Key</h4>
+            Pour accéder à un Web service on a souvent besoin d’une clé d’identification, appelée API Key.
+            Cette identification permet au fournisseur de surveiller les accès et de révoquer la clé en cas d’abus. Pour les
+            services payants, la clé sert également à facturer les accès.
+            Certaines API comme flickr offrent un accès public sans identification.
+            Pour obtenir une clé il suffit généralement de s’inscrire chez le fournisseur.<hr>
+                
+               <h4> Objectifs</h4>
+            Créer un compte et obtenir une clé d’API OpenWeatherMap
+            Se connecter à l’API et récupérer les données météorologiques actuelles de la ville de “Porrentruy, CH” au format JSON
+            et en français.
+            Documentation : http://openweathermap.org/current<hr>
+          
+        </div>
+    </div>
+</div>
+
+</div>
+ 
+<footer class="bg-dark text-light mb-0"><p>© 2020 <strong> Dorleans.jb</strong> en formation WF3 </p></footer>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

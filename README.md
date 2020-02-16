@@ -1,1 +1,1 @@
-projet M2
+Projet M
